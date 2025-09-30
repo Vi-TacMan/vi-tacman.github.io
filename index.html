@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="keywords" content="Articulated object manipulation, multi-modal perception, and tactile-informed manipulation" />
+  <meta name="keywords"
+    content="Articulated object manipulation, multi-modal perception, and tactile-informed manipulation" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>
@@ -63,13 +64,13 @@
           </a>
           <div class="navbar-dropdown">
             <a class="navbar-item" href="https://arxiv.org/abs/2403.01694" target="_blank">
-                [T-RO24] Tac-Man: Tactile-Informed Prior-Free Manipulation of Articulated Objects
+              [T-RO24] Tac-Man: Tactile-Informed Prior-Free Manipulation of Articulated Objects
             </a>
             <a class="navbar-item" href="https://arxiv.org/abs/2508.02204" target="_blank">
-                [ArXiv] TacMan-Turbo: Proactive Tactile Control for Articulated Object Manipulation
+              [ArXiv] TacMan-Turbo: Proactive Tactile Control for Articulated Object Manipulation
             </a>
             <a class="navbar-item" href="https://www.nature.com/articles/s42256-025-01053-3" target="_blank">
-                [NMI25] F-TAC Hand: A Biomimetic Hand Featuring High-Resolution Tactile Sensing
+              [NMI25] F-TAC Hand: A Biomimetic Hand Featuring High-Resolution Tactile Sensing
             </a>
           </div>
         </div>
@@ -114,11 +115,11 @@
               </span>
               <br>
               <span class="author-block">
-                <sup>2</sup> School of Psychological and Cognitive Sciences, Peking University
+                <sup>2</sup> Institute for Artificial Intelligence, Peking University
               </span>
               <br>
               <span class="author-block">
-                <sup>3</sup> Institute for Artificial Intelligence, Peking University
+                <sup>3</sup> School of Psychological and Cognitive Sciences, Peking University
               </span>
               <br>
               <span class="author-block">
@@ -130,15 +131,14 @@
               </span>
 
               <span class="eql-cntrb"><small><br /><sup>*</sup> Equal Contributor</small></span>
-              <span class="eql-cntrb"><small><br /><sup>✉️</sup> Corresponding Author</small></span>
+              <span class="eql-cntrb"><small>&nbsp&nbsp&nbsp&nbsp&nbsp<sup>✉️</sup> Corresponding Author</small></span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -148,8 +148,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -159,8 +158,7 @@
 
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -184,24 +182,38 @@
           <img src="static/images/teaser.png" style="width:100%; max-width:100%;">
           <div class="content has-text-justified">
             <p>
-              Vi-TacMan exploits the complementary strengths of vision and touch to manipulate previously unseen articulated objects: vision, with its global receptive field, proposes a coarse grasp and an initial interaction direction, which sufficiently activates the tactile-informed controller that leverages local contact information to achieve precise and robust manipulation.
+              Vi-TacMan exploits the complementary strengths of vision and touch to manipulate previously unseen
+              articulated objects: vision, with its global receptive field, proposes a coarse grasp and an initial
+              interaction direction, which sufficiently activates the tactile-informed controller that leverages local
+              contact information to achieve precise and robust manipulation.
             </p>
           </div>
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Autonomous manipulation of articulated objects represents a basic skill for robots deployed in human environments.
-               Current vision-based methods can infer object hidden kinematics, but their estimates are sometimes imprecise in driving reliable actions, especially on previously unseen objects.
-               Tactile methods, on the other hand, excel once contact is made, yet they require a reasonable initial guess about where and how to interact.
-               This observation suggests a natural division of labor: vision provides global, coarse guidance, while touch delivers precise, robust execution.
-               Building on this complementarity, we propose a systematic approach, Vi-TacMan, which uses vision to plan and touch to control.
-               We begin by training a vision module that accurately detects holdable and movable parts.
-               Once identified, these parts are then segmented for further processing.
-               From these detections, the system proposes feasible grasps along with a coarse interaction direction modeled by a von Mises-Fisher (vMF) distribution.
-               To enhance directional reasoning, we explicitly incorporate surface normals on movable regions as a geometric prior.
-               This inductive bias clarifies the expected motion and improves generalization to unseen objects, yielding significant gains over baseline methods (all $p$-values less than 0.0001).
-               Finally, seeded with the vision-derived grasp and motion direction, a tactile-informed controller establishes and maintains stable interactions, enabling reliable execution of the manipulation.
-               Real-world object experiments on diverse objects further confirm reliable manipulation without explicit kinematic models.
-               These findings establish a paradigm for multi-modal robotic perception that could advance autonomous systems operating in complex, unstructured environments.
+            <p>Autonomous manipulation of articulated objects represents a basic skill for robots deployed in human
+              environments.
+              Current vision-based methods can infer object hidden kinematics, but their estimates are sometimes
+              imprecise in driving reliable actions, especially on previously unseen objects.
+              Tactile methods, on the other hand, excel once contact is made, yet they require a reasonable initial
+              guess about where and how to interact.
+              This observation suggests a natural division of labor: vision provides global, coarse guidance, while
+              touch delivers precise, robust execution.
+              Building on this complementarity, we propose a systematic approach, Vi-TacMan, which uses vision to plan
+              and touch to control.
+              We begin by training a vision module that accurately detects holdable and movable parts.
+              Once identified, these parts are then segmented for further processing.
+              From these detections, the system proposes feasible grasps along with a coarse interaction direction
+              modeled by a von Mises-Fisher (vMF) distribution.
+              To enhance directional reasoning, we explicitly incorporate surface normals on movable regions as a
+              geometric prior.
+              This inductive bias clarifies the expected motion and improves generalization to unseen objects, yielding
+              significant gains over baseline methods (all $p$-values less than 0.0001).
+              Finally, seeded with the vision-derived grasp and motion direction, a tactile-informed controller
+              establishes and maintains stable interactions, enabling reliable execution of the manipulation.
+              Real-world object experiments on diverse objects further confirm reliable manipulation without explicit
+              kinematic models.
+              These findings establish a paradigm for multi-modal robotic perception that could advance autonomous
+              systems operating in complex, unstructured environments.
             </p>
           </div>
           <div style="padding:56.25% 0 0 0;position:relative;"><iframe
@@ -221,6 +233,17 @@
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title">Pipeline Overview</h2>
+          <div class="content is-centered has-text-justified">
+            <p class="math-content">
+              When manipulating a previously unseen articulated object placed at a random position, the Vi-TacMan
+              framework begins by capturing an RGB-D image of the scene. Utilizing its global receptive field, the
+              vision module identifies holdable and movable parts, segments them from the surrounding environment, and
+              proposes both a feasible grasp configuration and a coarse motion direction. These visual cues provide
+              sufficient information for the tactile-informed controller to establish stable contact with the object.
+              Guided by the inferred motion direction, the controller maintains this stable contact throughout the
+              manipulation process, ensuring precise and robust execution.
+            </p>
+          </div>
           <div style="padding:56.25% 0 0 0;position:relative;"><iframe
               src="https://player.vimeo.com/video/1122886607?h=13262734b2&badge=0&autopause=0&player_id=0&app_id=58479"
               frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
@@ -237,23 +260,102 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title">Simulation Results</h2>
-          <div class="content is-centered has-text-justified">
-            <img src="static/images/sim.png" style="width:100%; max-width:100%;">
-            <p class="math-content">
-              We illustrate the approach using four representative objects, one from each test category.
-              For each object, we present the obtained samples, the fitted vMF distribution, the ground truth, and the predictions of the three baseline methods.
-              By fitting the distribution and incorporating the surface normal as an inductive bias, our proposed method demonstrates greater robustness to high uncertainties when encountering previously unseen objects.
-              Finally, we present results on real-world examples, using the esimated grasping points.
-              These results demonstrate the successful transfer of our approach from simulation to real-world settings.
-            </p>
+          <h2 class="title">Modules and Results</h2>
+          <h2 class="subsection-title">Detection and Segmentation Module</h2>
+          <div class="container is-max-desktop">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb16.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask16.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb17.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask17.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb18.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask18.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb19.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask19.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb20.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask20.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb11.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask11.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb12.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask12.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb13.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask13.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb14.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask14.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb15.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask15.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb6.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask6.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb7.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask7.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb8.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask8.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb9.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask9.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb10.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask10.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb1.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask1.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb2.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask2.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb3.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask3.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb4.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask4.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+              <div class="item">
+                <img src="static/images/dect_and_seg/bb5.png" loading="lazy" style="width:50%; max-width:50%;" />
+                <img src="static/images/dect_and_seg/mask5.png" loading="lazy" style="width:50%; max-width:50%;" />
+              </div>
+            </div>
           </div>
+          <h2 class="subsection-title">Grasp Generation Module</h2>
           <div class="content is-centered has-text-justified">
             <div class="model-container" id="model-compare-wrapper">
               <!-- Model 1 Viewer with Label -->
               <div class="model-wrapper-comparison">
                 <div class="model-label">Ours</div>
-                <model-viewer id="modelViewerComparison1" loading="eager" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2" camera-controls="" disable-tap="" min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none" shadow-intensity="0.3" ar="" style="width: 100%; height: 100%;" ar-status="not-presenting">
+                <model-viewer id="modelViewerComparison1" loading="eager" touch-action="pan-y"
+                  environment-image="legacy" zoom-sensitivity="0.2" camera-controls="" disable-tap=""
+                  min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
+                  shadow-intensity="0.3" ar="" style="width: 100%; height: 100%;" ar-status="not-presenting">
                 </model-viewer>
               </div>
               <!-- Model 2 Viewer with Label -->
@@ -267,22 +369,40 @@
                   </div>
                 </div>
                 <div class="model-label">AnyGrasp</div>
-                <model-viewer id="modelViewerComparison2" loading="eager" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2" camera-controls="" disable-tap="" min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none" shadow-intensity="0.3" ar="" style="width: 100%; height: 100%;" ar-status="not-presenting">
+                <model-viewer id="modelViewerComparison2" loading="eager" touch-action="pan-y"
+                  environment-image="legacy" zoom-sensitivity="0.2" camera-controls="" disable-tap=""
+                  min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
+                  shadow-intensity="0.3" ar="" style="width: 100%; height: 100%;" ar-status="not-presenting">
                 </model-viewer>
               </div>
             </div>
-            <div class="selection-panel" id="comparisonSelectionPanel" style="width: 90% !important; aspect-ratio: 3.8/1; margin-left: 5%;">
+            <div class="selection-panel" id="comparisonSelectionPanel"
+              style="width: 90% !important; aspect-ratio: 3.8/1; margin-left: 5%;">
               <img class="selectable-image selected" name="drawer" src="static/comparison/drawer/color_no_bg.png">
               <img class="selectable-image" name="large_cabinet" src="static/comparison/large_cabinet/color_no_bg.png">
               <img class="selectable-image" name="microwave" src="static/comparison/microwave/color_no_bg.png">
               <img class="selectable-image" name="small_cabinet" src="static/comparison/small_cabinet/color_no_bg.png">
             </div>
-
             <p class="math-content">
               We show the comparison of grasp poses predicted by our method and AnyGrasp.
               Handles of articulated objects typically constrain the grasp pose to an 1-DoF configuration.
               However, the 6-DoF predictions from AnyGrasp often yield tilted poses that cannot provide stable grasps.
-              In contrast, our method exploits surface normals as priors to guide the grasp approaching direction and further refines the in-plane rotation through collision detection, resulting in more reliable and stable grasp poses.
+              In contrast, our method exploits surface normals as priors to guide the grasp approaching direction and
+              further refines the in-plane rotation through collision detection, resulting in more reliable and stable
+              grasp poses.
+            </p>
+          </div>
+          <h2 class="subsection-title">Direction Inference Module</h2>
+          <div class="content is-centered has-text-justified">
+            <img src="static/images/sim.png" style="width:100%; max-width:100%;">
+            <p class="math-content">
+              We illustrate the approach using four representative objects, one from each test category.
+              For each object, we present the obtained samples, the fitted vMF distribution, the ground truth, and the
+              predictions of the three baseline methods.
+              By fitting the distribution and incorporating the surface normal as an inductive bias, our proposed method
+              demonstrates greater robustness to high uncertainties when encountering previously unseen objects.
+              Finally, we present results on real-world examples, using the esimated grasping points.
+              These results demonstrate the successful transfer of our approach from simulation to real-world settings.
             </p>
           </div>
         </div>
@@ -306,7 +426,7 @@
       </div>
     </div>
   </section>
-  <!-- End real-world results --> 
+  <!-- End real-world results -->
 
   <!-- Paper acknowledgment -->
   <section class="section hero" style="padding-top: 0;">
@@ -315,7 +435,11 @@
         <div class="column">
           <h2 class="title is-3">Acknowledgment</h2>
           <div class="content has-text-justified">
-            <p>This work is supported in part by the National Science and Technology Major Project (2022ZD0114900), the National Natural Science Foundation of China (62376009), the Beijing Nova Program, the State Key Lab of General AI at Peking University, the PKU-BingJi Joint Laboratory for Artificial Intelligence, and the National Comprehensive Experimental Base for Governance of Intelligent Society, Wuhan East Lake High-Tech Development Zone.</p>
+            <p>This work is supported in part by the National Science and Technology Major Project (2022ZD0114900), the
+              National Natural Science Foundation of China (62376009), the Beijing Nova Program, the State Key Lab of
+              General AI at Peking University, the PKU-BingJi Joint Laboratory for Artificial Intelligence, and the
+              National Comprehensive Experimental Base for Governance of Intelligent Society, Wuhan East Lake High-Tech
+              Development Zone.</p>
           </div>
         </div>
       </div>

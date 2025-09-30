@@ -103,6 +103,8 @@ body {
 
 .results-carousel {
   overflow: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .results-carousel .item {
