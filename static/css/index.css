@@ -138,6 +138,7 @@ body {
   margin: 1rem 0;
 }
 
+
 .subsection-title {
   font-size: 1.4rem;
   font-weight: bold;
@@ -308,4 +309,63 @@ model-viewer {
 .selectable-image.selected {
   border: 3px solid #4a7aa5; 
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+/* --- Side caption figure: place figcaption to the left or right of image --- */
+.figure-side {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; /* remove perceived side padding */
+  gap: 0.75rem; /* tighter gap between image and caption */
+  margin: 1.25rem 0;
+  width: 100%;
+}
+
+/* ensure no extra left/right spacing from container styles */
+.content .figure-side {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Right (default): image on left, caption on right */
+.figure-side.right { flex-direction: row; }
+
+/* Left: caption on left, image on right */
+.figure-side.left { flex-direction: row-reverse; }
+
+/* Override generic figure image rules for side layout */
+.figure-side img {
+  flex: 0 1 58%; /* account for gap so total <= 100% */
+  width: 58%;
+  max-width: 58%;
+  height: auto;
+  margin: 0; /* cancel auto-centering from generic figure rule */
+  display: block;
+  box-sizing: border-box;
+}
+
+.figure-side figcaption {
+  flex: 0 1 42%;
+  width: 42%;
+  max-width: 42%;
+  margin: 0; /* no extra vertical or side spacing */
+  text-align: left;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* avoid center text behavior affecting layout */
+.figure-side.has-text-centered { text-align: initial; }
+
+/* Stack on small screens */
+@media (max-width: 768px) {
+  .figure-side { flex-direction: column !important; }
+  .figure-side img, .figure-side figcaption {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .figure-side figcaption { text-align: center; }
 }

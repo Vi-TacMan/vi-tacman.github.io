@@ -413,7 +413,18 @@
           </div>
           <h2 class="subsection-title">Direction Inference Module</h2>
           <div class="content is-centered has-text-justified">
-            <img src="static/images/sim.png" style="width:100%; max-width:100%;">
+            <p class="math-content">
+              We model the distribution of interaction directions given visual observations by sampling different point
+              groups in the movable region and inferring the corresponding point displacements after a small
+              perturbation. Each group yields a rigid transformation that, combined with the selected grasping point,
+              converts to a possible direction. In the ideal case, all directions would equal the ground truth and the
+              distribution would degenerate to a Dirac delta function. However, due to uncertainty in visual
+              observations, the directions are typically scattered around the ground truth. We fit a von Mises-Fisher
+              (vMF) distribution to these samples to model this uncertainty, where the mean direction achieves the
+              highest probability density. In practice, we compute the Fréchet mean of the sampled directions under the
+              geodesic metric (arc length) on the sphere, yielding an unbiased estimator of the mean.
+            </p>
+              <img src="static/images/sim.png" style="width:100%; max-width:100%;">
             <p class="math-content">
               We illustrate the approach using four representative objects, one from each test category.
               For each object, we present the obtained samples, the fitted vMF distribution, the ground truth, and the
@@ -422,15 +433,16 @@
               method
               demonstrates greater robustness to high uncertainties when encountering previously unseen objects.
             </p>
-            <figure class="has-text-centered">
-              <img src="static/images/direction.png" style="width:75%; max-width:75%;">
-              <figcaption><strong>Quantitative results of direction estimates on unseen object
-                categories.</strong>  We report prediction errors from four methods over 5,836 test samples drawn from
-                categories not seen during training. Our method, which uses surface normals as an inductive bias,
-                achieves a significant performance gain over the baselines. The violin plots show the error
-                distributions: the outer shape is the kernel density estimate; the white dot is the median; the
-                thick bar denotes the interquartile range (IQR); and the whiskers extend to \(1.5\times\) IQR beyond the
-                quartiles. **** indicates \(p\)-value < 0.0001. </figcaption>
+            <figure class="figure-side left has-text-centered">
+                <figcaption><br><strong>Quantitative results of direction estimates on unseen object
+                  categories.</strong> We report prediction errors from four methods over 5,836 test samples drawn from
+                  categories not seen during training. Our method, which uses surface normals as an inductive bias,
+                  achieves a significant performance gain over the baselines. The violin plots show the error
+                  distributions: the outer shape is the kernel density estimate; the white dot is the median; the
+                  thick bar denotes the interquartile range (IQR); and the whiskers extend to \(1.5\times\) IQR beyond the
+                  quartiles. **** indicates \(p\)-value < 0.0001. </figcaption>
+                <img src="static/images/direction.png">
+            </figure>
           </div>
         </div>
       </div>
