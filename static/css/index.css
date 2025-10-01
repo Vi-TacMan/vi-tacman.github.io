@@ -369,3 +369,37 @@ model-viewer {
   }
   .figure-side figcaption { text-align: center; }
 }
+
+/* Carousel protection styles */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.carousel .item {
+  position: relative;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure carousel container has proper dimensions */
+.results-carousel {
+  width: 100%;
+  position: relative;
+}
+
+.results-carousel .item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

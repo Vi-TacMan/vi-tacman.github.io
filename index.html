@@ -99,7 +99,7 @@
                 <a href="https://siruixie.github.io/" target="_blank">Sirui Xie</a><sup>2,3,4⚖️</sup>,
               </span>
               <span class="author-block">
-                Wenhuan Zhang<sup>6⚖️</sup>,
+                Wenhuan Zhang<sup>2⚖️</sup>,
               </span>
               <span class="author-block">
                 Zhi Han<sup>1</sup>,
@@ -130,7 +130,7 @@
                 <sup>5</sup> LeapZenith AI Research
               </span>
               <span class="author-block">
-                <sup>6</sup> The work was done during his internship at Peking University
+                <sup>6</sup> Embodied Intelligence Lab, PKU-Wuhan Institute for Artificial Intelligence
               </span>
               <span class="eql-cntrb"><small><br /><sup>⚖️</sup> Equal Contributor</small></span>
               <span class="eql-cntrb"><small>&nbsp&nbsp&nbsp&nbsp&nbsp<sup>✉️</sup> Corresponding Author</small></span>
@@ -192,35 +192,27 @@
           </div>
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Autonomous manipulation of articulated objects represents a basic skill for robots deployed in human
+            <p>Autonomous manipulation of articulated objects remains a fundamental challenge for robots in human
               environments.
-              Current vision-based methods can infer object hidden kinematics, but their estimates are sometimes
-              imprecise in driving reliable actions, especially on previously unseen objects.
-              Tactile methods, on the other hand, excel once contact is made, yet they require a reasonable initial
-              guess about where and how to interact.
+              Vision-based methods can infer hidden kinematics but yield imprecise estimates on unfamiliar objects.
+              Tactile approaches achieve robust control through contact feedback but require accurate initialization.
+              This suggests a natural synergy: vision for global guidance, touch for local precision.
               This observation suggests a natural division of labor: vision provides global, coarse guidance, while
               touch delivers precise, robust execution.
-              Building on this complementarity, we propose a systematic approach, Vi-TacMan, which uses vision to plan
-              and touch to control.
-              We begin by training a vision module that accurately detects holdable and movable parts.
-              Once identified, these parts are then segmented for further processing.
-              From these detections, the system proposes feasible grasps along with a coarse interaction direction
-              modeled by a von Mises-Fisher (vMF) distribution.
-              To enhance directional reasoning, we explicitly incorporate surface normals on movable regions as a
-              geometric prior.
-              This inductive bias clarifies the expected motion and improves generalization to unseen objects, yielding
-              significant gains over baseline methods (all $p$-values less than 0.0001).
-              Finally, seeded with the vision-derived grasp and motion direction, a tactile-informed controller
-              establishes and maintains stable interactions, enabling reliable execution of the manipulation.
-              Real-world object experiments on diverse objects further confirm reliable manipulation without explicit
-              kinematic models.
-              These findings establish a paradigm for multi-modal robotic perception that could advance autonomous
-              systems operating in complex, unstructured environments.
-            </p>
+              Yet no framework systematically exploits this complementarity for generalized articulated manipulation.
+              Here we present Vi-TacMan, which uses vision to propose grasps and coarse directions that seed a tactile
+              controller for precise execution.
+              By incorporating surface normals as geometric priors and modeling directions via von Mises-Fisher
+              distributions, our approach achieves significant gains over baselines (all
+              $\boldsymbol{p}<0.0001$). Critically, manipulation succeeds without explicit kinematic models---the
+              tactile controller refines coarse visual estimates through real-time contact regulation. Tests on
+              50,000+ simulated and diverse real-world objects confirm robust cross-category generalization. This work
+              establishes that coarse visual cues suffice for reliable manipulation when coupled with tactile
+              feedback, offering a scalable paradigm for autonomous systems in unstructured environments. </p>
           </div>
           <div style="padding:56.25% 0 0 0;position:relative;"><iframe
               src="https://player.vimeo.com/video/1122885741?h=af48f7df9f&badge=0&autopause=0&player_id=0&app_id=58479"
-              frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+              frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
               style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Supplementary Video"></iframe>
           </div>
         </div>
@@ -248,7 +240,7 @@
           </div>
           <div style="padding:56.25% 0 0 0;position:relative;"><iframe
               src="https://player.vimeo.com/video/1122886607?h=13262734b2&badge=0&autopause=0&player_id=0&app_id=58479"
-              frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+              frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
               style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Supplementary Video"></iframe>
           </div>
         </div>
@@ -273,10 +265,10 @@
               "holdable" parts, while orange indicates "movable" parts.
             </p>
             <div class="container is-max-desktop">
-              <div id="results-carousel" class="carousel results-carousel">
+              <div id="results-carousel" class="carousel results-carousel" data-size="1" data-loop="true" data-autoplay="true">
                 <div class="item">
-                  <img src="static/images/dect_and_seg/bb16.png" loading="lazy" style="width:50%; max-width:50%;" />
-                  <img src="static/images/dect_and_seg/mask16.png" loading="lazy" style="width:50%; max-width:50%;" />
+                  <img src="static/images/dect_and_seg/bb16.png" loading="lazy" style="width:50%; max-width:50%;" alt="Detection result" />
+                  <img src="static/images/dect_and_seg/mask16.png" loading="lazy" style="width:50%; max-width:50%;" alt="Segmentation result" />
                 </div>
                 <div class="item">
                   <img src="static/images/dect_and_seg/bb17.png" loading="lazy" style="width:50%; max-width:50%;" />
@@ -460,7 +452,7 @@
           <h2 class="title">Real-World Validations</h2>
           <div style="padding:56.25% 0 0 0;position:relative;"><iframe
               src="https://player.vimeo.com/video/1122886898?h=1bcb6577b7&badge=0&autopause=0&player_id=0&app_id=58479"
-              frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+              frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
               style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Supplementary Video"></iframe>
           </div>
         </div>
